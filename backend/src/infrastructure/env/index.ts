@@ -3,6 +3,7 @@ import { config } from "dotenv";
 config();
 
 export const ENV = {
+  PORT: process.env.PORT || 8080,
   TEST_VAR: process.env.TEST_VAR,
   PORT: process.env.PORT || "8080",
   SESSION_SECRET: process.env.SESSION_SECRET || "",
@@ -10,5 +11,6 @@ export const ENV = {
   DB_NAME: process.env.DB_NAME || "Trainstagram",
   DB_USER: process.env.DB_USER || "root",
   DB_PASSWORD: process.env.DB_PASSWORD || "",
-  ENV: process.env.ENVIRONMENT || "dev",
+  ENVIRONMENT: process.env.ENVIRONMENT || "dev",
 };
+

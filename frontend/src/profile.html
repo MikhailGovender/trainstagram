@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/profile.css" />
+    <link rel="stylesheet" type="text/css" href="./css/home.css">
     <title>Profile</title>
 </head>
 <body>
 
-    <header class="header"><p>Hello Header</p></header>
-    
+    <header class="header-container">
+        <a href="index.html"><h1 class="header-title">TrainStagram</h1></a>
+        <a href="login-sign.html"><button class="header-button">Logout</button></a>
+      </header>
+
     <section class="profile">
         <aside class="profile_sidebar">
             <article class="card">
@@ -45,6 +49,13 @@
                 </div>
             </article>
         </main>
+        <footer>
+            <nav>
+              <a href="index.html">Explore</a>
+              <a href="post-picture.html">Post</a>
+              <a href="profile.html" class="active">Profile</a>
+          </nav>
+          </footer>
     </section>
 </body>
 </html>

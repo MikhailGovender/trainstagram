@@ -1,0 +1,124 @@
+/* CSS styles for the home page */
+:root {
+    --primary-color: #1aa1e0;
+    --active-color: #96e4dd;
+    --secondary-color: #325b68;
+    --text-color: #fcfcfc;
+    --background-color: #171718;
+    --background-color-2: #0f0f0f;
+  }
+  
+  .header-container {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px;
+  }
+
+  button{
+    color: var(--text-color);
+    background-color: var(--primary-color);
+  }
+  .header-container a {
+    text-decoration: none;
+  }
+  
+  .header-title {
+    font-size: 24px;
+    margin-right: 20px; /* Add some spacing between the title and button */
+  }
+
+
+  .header-button {
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+  }
+  
+  header {
+    background-color: var(--background-color-2);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    margin: 0;
+    color: var(--primary-color);
+  }
+
+    
+  h2{
+    margin: 0;
+    font-size: 80px;
+    color: var(--primary-color);
+  }
+  
+  .content {
+    padding: 20px;
+    text-align: center;
+    display :block;
+    justify-self: center;
+  }
+  
+  #imageList {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    height: 400px;
+    display: table;
+  }
+  
+  .imageItem {
+    width: 500px;
+    height: 300px;
+    margin: 10px;
+    background-color: var(--secondary-color);
+  }
+  
+  footer {
+    background-color: var(--secondary-color);
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: var(--text-color);
+  }
+  
+  nav a.active {
+    color: var(--active-color);
+  }
+  
+  /* Hide the scroll bar */
+  #imageList::-webkit-scrollbar {
+    width: 0.5em;
+    background-color: var(--secondary-color);
+  }
+  
+  #imageList::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+  }
+  
+  #imageList::-webkit-scrollbar-track {
+    background-color: var(--secondary-color);
+  }
+  

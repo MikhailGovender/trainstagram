@@ -4,12 +4,11 @@
   "description": "a feed based social media featuring trains, exclusively",
   "main": "backend/src/app.ts",
   "engines": {
-    "node": ">=16.0.0",
-    "npm": ">=8.0.0"
+    "node": ">=18.0.0 <19.0.0",
+    "npm": ">=8.0.0 <10.0.0"
   },
   "scripts": {
-    "build": "mkdir -p ./dist && cp .env ./dist/.env",
-    "start": "tsc && node ./backend/src/app.ts",
+    "start": "tsc && node ./dist/backend/src/app.js",
     "start:dev": "npx nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -29,7 +28,8 @@
       "./frontend/"
     ],
     "ext": "*",
-    "delay": 2000
+    "delay": 2000,
+    "exec": "npx ts-node ./backend/src/app.ts"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
@@ -42,7 +42,6 @@
     "passport-local": "^1.0.0",
     "sequelize": "^6.32.1",
     "tedious": "^16.2.0",
-    "ts-node": "^10.9.1",
     "typescript": "^5.1.6"
   },
   "devDependencies": {
@@ -55,6 +54,7 @@
     "@types/passport-local": "^1.0.35",
     "@types/node": "^20.4.4",
     "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
     "sequelize-typescript": "^2.1.5"
   }
 }

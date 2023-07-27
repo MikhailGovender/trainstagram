@@ -6,12 +6,15 @@
     <title>Post a Train | Trainstagram</title>
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/post-picture.css" />
+    <link rel="stylesheet" type="text/css" href="./css/home.css">
     <script src="js/post-picture.js" defer></script>
   </head>
   <body>
-    <header>
-      <img class="logo" src="assets/trainstagram.png" alt="trainstagram logo" />
+    <header class="header-container">
+      <a href="index.html"><h1 class="header-title">TrainStagram</h1></a>
+      <a href="login-sign.html"><button class="header-button">Logout</button></a>
     </header>
+      <!-- <img class="logo" src="assets/trainstagram.png" alt="trainstagram logo" /> -->
     <main>
       <form id="post-picture">
         <label class="file-upload button" for="new-picture"
@@ -42,5 +45,12 @@
         <input class="submit button" type="submit" value="Post!" />
       </form>
     </main>
+    <footer>
+      <nav>
+        <a href="index.html">Explore</a>
+        <a href="post-picture.html" class="active">Post</a>
+        <a href="profile.html">Profile</a>
+    </nav>
+    </footer>
   </body>
 </html>

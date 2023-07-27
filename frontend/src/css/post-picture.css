@@ -2,20 +2,6 @@
   --border: 0.1rem solid black;
 }
 
-html {
-  background-color: rgb(206, 242, 242);
-}
-
-header {
-  display: flex;
-  justify-content: center;
-}
-
-img.logo {
-  width: 100%;
-  max-width: 35rem;
-  padding: 1rem;
-}
 
 main {
   display: grid;
