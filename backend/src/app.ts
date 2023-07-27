@@ -1,5 +1,6 @@
 import express from "express";
-import { router as userRoutes } from './app/routes/user';
+import { userRoutes } from './app/routes/user';
+import { viewRoutes } from "./app/routes/views";
 import { ENV } from "./infrastructure/env/index";
 import { connectToDatabase } from "./infrastructure/database/connectToDatabase";
 
@@ -17,14 +18,13 @@ connectToDatabase();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use("/", userRoutes);
+app.use(viewRoutes);
+app.use("/user", userRoutes);
 
-// this can be added to its own routes file
-// I just wanted it to make sure the app's frontend was working
 app.use(express.static("./frontend/src/", { extensions: ["html"] }));
-app.get("/", (_, res) => {
-  res.sendFile("index.html", { root: "./frontend/src/" });
-})
+app.use(express.static("./frontend/src/css", { extensions: ["css"] }));
+app.use(express.static("./frontend/src/js", { extensions: ["js"] }));
+
 
 const server = app.listen(PORT, () => {
   console.log(`Server started on PORT: ${PORT} in ${ENV.ENVIRONMENT}`);
