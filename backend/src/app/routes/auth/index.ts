@@ -12,9 +12,9 @@ passport.use(strategy);
 passport.serializeUser(serializeUser);
 passport.deserializeUser(deserializeUser);
 
-const authRouter = Router();
+const authRoutes = Router();
 
-authRouter.post(
+authRoutes.post(
   "/login/password",
   passport.authenticate(strategy, {
     successReturnToOrRedirect: "/",
@@ -22,9 +22,9 @@ authRouter.post(
     failureMessage: true,
   })
 );
-authRouter.post("/login/password", (req, res) => res.send(req.body));
+authRoutes.post("/login/password", (req, res) => res.send(req.body));
 
-authRouter.post("/logout", logout);
-authRouter.post("/register", register);
+authRoutes.post("/logout", logout);
+// authRoutes.post("/register", register);
 
-export default authRouter;
+export default authRoutes;

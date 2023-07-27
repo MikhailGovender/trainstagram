@@ -6,7 +6,6 @@ export class UserRepository implements IRepository<UserAttributes, number> {
 
   async create(body: UserAttributes): Promise<UserAttributes> {
     return await User.create({
-      userID: 0,
       username: body.username,
       hashedPassword: body.hashedPassword,
       biography: body.biography,
