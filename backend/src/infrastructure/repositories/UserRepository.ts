@@ -1,10 +1,10 @@
-import User from "../models/user";
+import User, { UserAttributes } from "../models/user";
 import { IRepository } from "./IRepository";
 
-export class UserRepository implements IRepository<User, number> {
+export class UserRepository implements IRepository<UserAttributes, number> {
   public UserRepository() {}
 
-  async create(body: User): Promise<User> {
+  async create(body: UserAttributes): Promise<UserAttributes> {
     return await User.create({
       userID: 0,
       username: body.username,
@@ -14,19 +14,19 @@ export class UserRepository implements IRepository<User, number> {
     });
   }
 
-  async readByID(id: number): Promise<User | null> {
+  async readByID(id: number): Promise<UserAttributes | undefined> {
     // console.log('DB: ', db);
     console.log("DB users: ", await User.findAll());
     const result = await User.findByPk(id);
     console.log("result: ", result);
-    return result;
+    return result?.dataValues;
   }
 
   async readByUsername(username: string): Promise<User | null> {
     return await User.findOne({ where: { username: username } });
   }
 
-  async update(id: number, body: User): Promise<User | null> {
+  async update(id: number, body: UserAttributes): Promise<UserAttributes | null> {
     await User.update(
       {
         username: body.username,

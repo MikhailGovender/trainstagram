@@ -4,10 +4,9 @@ import { ErrorHandler } from "../helpers/ErrorHandler";
 
 export const getUserProfile = async (req: Request, res: Response, next: NextFunction) => {
     try {
-    //TODO: validation goes here
         const repository = new UserRepository();
         console.log('req.body.id: ', req.body.id);
-        const user = repository.readByID(req.body.id);
+        const user = await repository.readByID(req.body.id);
 
         if(!user) {
             return next(new ErrorHandler('User Profile not found', 404));

@@ -1,0 +1,74 @@
+#register-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.logo{
+    height: 300px;
+    width: 350px;
+}
+
+#form-heading h1{
+    margin-bottom: 20px;
+    font-size: 50px;
+    text-align: center;
+}
+#form-heading h2{
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+form {
+    background-color: #2d2f49;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 500px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+label{
+    display: block;
+    color: white;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+input{
+    height: 20px;
+    position: relative;
+    width: 100%;
+}
+
+button{
+    margin: 5px;
+    width: 8rem;
+    height: 2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    color: black;
+}
+
+button:hover{
+    background-color: #41dab1;
+}
+
+#logLink{
+    padding: 25px;
+    font-size: 20px;
+    color:white;
+    text-decoration: none;
+}
+#logLink:visited{
+    color: purple;
+}
+#logLink:active{
+    color: #41dab1;
+}
