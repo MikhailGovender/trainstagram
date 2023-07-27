@@ -3,7 +3,6 @@ import { config } from "dotenv";
 config();
 
 export const ENV = {
-  PORT: process.env.PORT || 8080,
   TEST_VAR: process.env.TEST_VAR,
   PORT: process.env.PORT || "8080",
   SESSION_SECRET: process.env.SESSION_SECRET || "",

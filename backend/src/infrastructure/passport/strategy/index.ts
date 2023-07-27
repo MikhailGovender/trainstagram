@@ -1,14 +1,12 @@
 import { Strategy } from "passport-local";
 import { compare } from "bcrypt";
+import { UserRepository } from "../../repositories/UserRepository";
 
 const strategy = new Strategy(async (username, password, done) => {
   try {
-    const user = {
-      hashed_password: "willa",
-    };
-    console.log(user.hashed_password, password);
+    const user = await new UserRepository().readByUsername(username);
     // if (!user || (await compare(password, user.hashed_password)))
-    if (!user || password !== user.hashed_password)
+    if (!user || password !== user.hashedPassword)
       return done(null, false, { message: "Incorrect username or password" });
 
     return done(null, user);
