@@ -3,7 +3,11 @@ import { userRoutes } from "./app/routes/user";
 import { viewRoutes } from "./app/routes/views";
 import { ENV } from "./infrastructure/env/index";
 import { connectToDatabase } from "./infrastructure/database/connectToDatabase";
-import authRouter, { session } from "./app/routes/auth";
+import authRouter from "./app/routes/auth";
+import session from "./app/helpers/auth/session";
+import cookieParser from "cookie-parser";
+import authMiddleware from "./app/middleware/auth/login";
+import passport from "passport";
 
 const app = express();
 const PORT = ENV.PORT;
@@ -18,7 +22,11 @@ connectToDatabase();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(session)
+app.use(cookieParser());
+app.use(session);
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(authMiddleware);
 
 app.use(viewRoutes);
 app.use("/user", userRoutes);
