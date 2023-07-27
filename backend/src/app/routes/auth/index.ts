@@ -6,7 +6,7 @@ import {
   deserializeUser,
 } from "../../../infrastructure/passport";
 import logout from "./logout";
-import signUp from "./sign-up";
+import register from "./register";
 
 passport.use(strategy);
 passport.serializeUser(serializeUser);
@@ -25,6 +25,6 @@ authRouter.post(
 authRouter.post("/login/password", (req, res) => res.send(req.body));
 
 authRouter.post("/logout", logout);
-authRouter.post("/signup", signUp);
+authRouter.post("/register", register);
 
 export default authRouter;

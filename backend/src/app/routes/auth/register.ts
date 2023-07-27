@@ -3,7 +3,7 @@ import { UserRepository } from "../../../infrastructure/repositories/UserReposit
 import { hash } from "bcrypt";
 import User from "../../../infrastructure/models/user";
 
-const signUp = async (req: Request, res: Response, next: NextFunction) => {
+const register = async (req: Request, res: Response, next: NextFunction) => {
   const newUser = {
     userID: 0,
     username: req.body.username,
@@ -23,4 +23,4 @@ const signUp = async (req: Request, res: Response, next: NextFunction) => {
   return next();
 };
 
-export default signUp;
+export default register;
