@@ -12,6 +12,8 @@ export const getUserProfile = async (req: Request, res: Response, next: NextFunc
             return next(new ErrorHandler('User Profile not found', 404));
         }
 
+        user.profilePicture = (user.profilePicture != null)?user.profilePicture.toString('base64'):'N/A';
+
         res.status(200).send({
             success: true,
             user: user

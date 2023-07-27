@@ -1,4 +1,5 @@
 import { DataTypes, Model } from "sequelize";
+import Post from "../models/post";
 import sequelize from "sequelize/types/sequelize";
 import { SequelizeConnection } from "../database/SequelizeConnection";
 
@@ -7,7 +8,7 @@ export interface UserAttributes {
   username: string;
   hashedPassword: string;
   biography: string;
-  profilePicture: string;
+  profilePicture: Buffer | string;
 }
 
 class User extends Model<UserAttributes> implements UserAttributes {
@@ -15,7 +16,7 @@ class User extends Model<UserAttributes> implements UserAttributes {
   declare username: string;
   declare hashedPassword: string;
   declare biography: string;
-  declare profilePicture: string;
+  declare profilePicture: Buffer | string;
 }
 
 User.init(
@@ -53,5 +54,5 @@ User.init(
 
 // console.log(User === sequelize.models.User);
 
-// return User;
-export default User;
+    User.hasMany(Post, { foreignKey: 'userID' });
+    export default User;
